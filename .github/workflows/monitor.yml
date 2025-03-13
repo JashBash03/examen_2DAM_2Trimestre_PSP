@@ -31,4 +31,3 @@ jobs:
         with:
           name: resultado-json
           path: ./resultado.json
-

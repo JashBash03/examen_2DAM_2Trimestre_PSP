@@ -1,0 +1,33 @@
+name: Llamar API y Guardar Resultado
+
+on:
+  push:
+    branches:
+      - main  # Puedes cambiar a la rama que prefieras
+
+jobs:
+  api_request:
+    runs-on: ubuntu-latest  # Usar un contenedor de Ubuntu para ejecutar el trabajo
+    
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2  # Extrae el código del repositorio
+        
+      - name: Llamar a la API
+        run: |
+          # Hacer la llamada a la API usando curl (puedes usar cualquier otra herramienta como wget)
+          curl --request GET 
+	          --url https://weather-request.p.rapidapi.com/weather/Serbia 
+	          --header 'x-rapidapi-host: ${{ secrets.API_HOST }}' 
+	          --header 'x-rapidapi-key: ${{ secrets.API_KEY }}'
+
+      - name: Guardar resultado en un archivo
+        run: |
+          # Guarda el contenido en un archivo dentro del repositorio
+          mv resultado.json ./resultado.json
+          
+      - name: Subir archivo resultado a GitHub (opcional)
+        uses: actions/upload-artifact@v2
+        with:
+          name: resultado-json
+          path: ./resultado.json

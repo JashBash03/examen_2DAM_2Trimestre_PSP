@@ -23,8 +23,8 @@ jobs:
 
       - name: Guardar resultado en un archivo
         run: |
-        # Guarda el contenido en un archivo dentro del repositorio
-        mv resultado.json ./resultado.json
+          # Guarda el contenido en un archivo dentro del repositorio
+          mv resultado.json ./resultado.json
       
       - name: Subir archivo resultado a GitHub (opcional)
         uses: actions/upload-artifact@v3

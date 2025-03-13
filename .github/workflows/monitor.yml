@@ -15,7 +15,7 @@ jobs:
         
       - name: Llamar a la API
         run: 
-        # Hacer la llamada a la API usando curl (puedes usar cualquier otra herramienta como wget)
+          # Hacer la llamada a la API usando curl (puedes usar cualquier otra herramienta como wget)
           curl --request GET 
 	          --url https://weather-request.p.rapidapi.com/weather/Serbia 
 	          --header 'x-rapidapi-host: ${{ secrets.API_HOST }}' 

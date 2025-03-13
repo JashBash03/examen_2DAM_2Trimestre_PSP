@@ -31,3 +31,6 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git add web_status.log || echo "No hay cambios en web_status.log"
           git diff --cached --quiet || (git commit -m "Actualización de estado web" && git push https://x-access-token:${TOKEN}@github.com/${{ github.repository }}.git main)
+
+          #gey
+          

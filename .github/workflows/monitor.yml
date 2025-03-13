@@ -14,15 +14,15 @@ jobs:
         uses: actions/checkout@v2  # Extrae el código del repositorio
         
       - name: Llamar a la API
-        run: |
-          # Hacer la llamada a la API usando curl (puedes usar cualquier otra herramienta como wget)
+        run: 
+        # Hacer la llamada a la API usando curl (puedes usar cualquier otra herramienta como wget)
           curl --request GET 
 	          --url https://weather-request.p.rapidapi.com/weather/Serbia 
 	          --header 'x-rapidapi-host: ${{ secrets.API_HOST }}' 
 	          --header 'x-rapidapi-key: ${{ secrets.API_KEY }}'
 
       - name: Guardar resultado en un archivo
-        run: |
+        run:
           # Guarda el contenido en un archivo dentro del repositorio
           mv resultado.json ./resultado.json
           
